@@ -17,27 +17,15 @@ name: CodeQL
 
 on:
   push:
-    paths:
-     - '**'
-     - '!**.md'
-     - '!doc/**'
-     - '!**.txt'
-     - '!images/**'
-     - '!LICENSE'
-     - 'test/**'
     branches: [ v2.4.0_release ]
 
 env:
   CODEQL_EXTRACTOR_GO_BUILD_TRACING: true
 
-permissions: {}
-
 jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-
-    if: github.repository == 'sigstore/cosign'
 
     permissions:
       security-events: write
